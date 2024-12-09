@@ -130,7 +130,7 @@ const Home = () => {
                   })}
                 >
                   <input
-                    id="queryType"
+                    id="generalEnquiry"
                     type="radio"
                     {...register("queryType", {
                       required: {
@@ -140,7 +140,7 @@ const Home = () => {
                     })}
                     value="general-enquiry"
                   />
-                  <label htmlFor="queryType">General Enquiry</label>
+                  <label htmlFor="generalEnquiry">General Enquiry</label>
                 </div>
                 <div
                   className={classNames({
@@ -149,7 +149,7 @@ const Home = () => {
                   })}
                 >
                   <input
-                    id="queryType"
+                    id="supportRequest"
                     type="radio"
                     {...register("queryType", {
                       required: {
@@ -159,7 +159,7 @@ const Home = () => {
                     })}
                     value="support-request"
                   />
-                  <label htmlFor="queryType">Support Request</label>
+                  <label htmlFor="supportRequest">Support Request</label>
                 </div>
               </div>
               <span role="alert" className={styles.errorText}>
