@@ -42,10 +42,11 @@ const Home = () => {
                   [styles.error]: errors.firstName,
                 })}
               >
-                <label htmlFor="first name" className={styles.label}>
+                <label htmlFor="firstName" className={styles.label}>
                   First Name
                 </label>
                 <input
+                  id="firstName"
                   className={styles.inputText}
                   type="text"
                   {...register("firstName", {
@@ -66,10 +67,11 @@ const Home = () => {
                   [styles.error]: errors.lastName,
                 })}
               >
-                <label htmlFor="last name" className={styles.label}>
+                <label htmlFor="lastName" className={styles.label}>
                   Last Name
                 </label>
                 <input
+                  id="lastName"
                   type="text"
                   className={styles.inputText}
                   {...register("lastName", {
@@ -91,10 +93,11 @@ const Home = () => {
                 [styles.error]: errors.email,
               })}
             >
-              <label htmlFor="first name" className={styles.label}>
+              <label htmlFor="email" className={styles.label}>
                 Email Address
               </label>
               <input
+                id="email"
                 type="text"
                 className={styles.inputText}
                 {...register("email", {
@@ -127,6 +130,7 @@ const Home = () => {
                   })}
                 >
                   <input
+                    id="queryType"
                     type="radio"
                     {...register("queryType", {
                       required: {
@@ -136,7 +140,7 @@ const Home = () => {
                     })}
                     value="general-enquiry"
                   />
-                  <label htmlFor="general enquiry">General Enquiry</label>
+                  <label htmlFor="queryType">General Enquiry</label>
                 </div>
                 <div
                   className={classNames({
@@ -145,6 +149,7 @@ const Home = () => {
                   })}
                 >
                   <input
+                    id="queryType"
                     type="radio"
                     {...register("queryType", {
                       required: {
@@ -154,7 +159,7 @@ const Home = () => {
                     })}
                     value="support-request"
                   />
-                  <label htmlFor="support request">Support Request</label>
+                  <label htmlFor="queryType">Support Request</label>
                 </div>
               </div>
               <span role="alert" className={styles.errorText}>
@@ -167,10 +172,11 @@ const Home = () => {
                 [styles.error]: errors.message,
               })}
             >
-              <label htmlFor="first name" className={styles.label}>
+              <label htmlFor="message" className={styles.label}>
                 Message
               </label>
               <textarea
+                id="message"
                 className={styles.inputText}
                 rows={4}
                 {...register("message", {
@@ -194,6 +200,7 @@ const Home = () => {
             >
               <div className={styles.flexP}>
                 <input
+                  id="consent"
                   type="checkbox"
                   {...register("consent", {
                     required: {
