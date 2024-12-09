@@ -14,6 +14,8 @@ const Home = () => {
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -126,8 +128,9 @@ const Home = () => {
                 <div
                   className={classNames({
                     [styles.radioBox]: true,
-                    [styles.active]: false,
+                    [styles.active]: watch("queryType") === "general-enquiry",
                   })}
+                  onClick={() => setValue("queryType", "general-enquiry")}
                 >
                   <input
                     id="generalEnquiry"
@@ -145,8 +148,9 @@ const Home = () => {
                 <div
                   className={classNames({
                     [styles.radioBox]: true,
-                    [styles.active]: false,
+                    [styles.active]: watch("queryType") === "support-request",
                   })}
+                  onClick={() => setValue("queryType", "support-request")}
                 >
                   <input
                     id="supportRequest"
