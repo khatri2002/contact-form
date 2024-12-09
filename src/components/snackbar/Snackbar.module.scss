@@ -1,0 +1,31 @@
+.snackbar {
+  @apply invisible fixed top-2 m-4 rounded-lg bg-green-950 p-5 text-white sm:m-0;
+
+  .header {
+    @apply flex items-center gap-x-2;
+
+    img {
+      @apply w-4;
+    }
+  }
+
+  .desc {
+    @apply mt-2 block text-sm opacity-70;
+  }
+
+  &.show {
+    @apply visible;
+    animation: fadein 0.4s;
+  }
+}
+
+@keyframes fadein {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

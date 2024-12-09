@@ -1,0 +1,88 @@
+.main {
+  @apply flex min-h-screen items-center justify-center bg-green-200 p-4;
+
+  .box {
+    @apply rounded-xl bg-white p-5 sm:p-8;
+    width: 40rem;
+
+    h1 {
+      @apply text-2xl font-bold sm:text-3xl;
+    }
+
+    .fieldsContainer {
+      @apply mt-4 space-y-3 sm:mt-6 sm:space-y-4;
+
+      .flex_ {
+        @apply flex flex-col items-center gap-3 sm:flex-row sm:gap-4;
+      }
+      .flexP {
+        @apply flex gap-4;
+      }
+
+      .field {
+        @apply w-full text-gray-500;
+
+        .label {
+          @apply relative text-sm font-medium;
+
+          &:after {
+            @apply absolute -right-4 text-green-600;
+            content: "*";
+          }
+        }
+
+        .inputText,
+        .radioBox {
+          @apply mt-1 w-full cursor-pointer rounded-md border border-grey-500 px-2 py-1 transition-colors hover:border-green-600 sm:px-4 sm:py-2;
+        }
+
+        .inputText {
+          @apply block outline-none;
+        }
+
+        .radioBox {
+          @apply flex items-center gap-x-2;
+
+          input {
+            @apply h-4 w-4 cursor-pointer accent-green-600;
+          }
+
+          label {
+            @apply cursor-pointer;
+          }
+
+          &.active {
+            @apply border-green-600 bg-green-200;
+          }
+        }
+
+        &.checkbox {
+          input {
+            @apply h-4 w-4 cursor-pointer accent-green-600;
+          }
+
+          label {
+            @apply cursor-pointer transition-colors hover:text-green-600;
+          }
+        }
+
+        .errorText {
+          @apply invisible mt-1 block min-h-6 text-xs text-red opacity-0 transition-all sm:mt-2 sm:text-sm;
+        }
+
+        &.error {
+          .inputText {
+            @apply border-red;
+          }
+          .errorText {
+            @apply visible opacity-100;
+          }
+        }
+      }
+    }
+
+    .btn {
+      @apply mt-6 w-full rounded bg-green-600 py-3 text-sm text-white transition-colors hover:bg-green-900 disabled:cursor-not-allowed disabled:bg-slate-400;
+    }
+  }
+}
